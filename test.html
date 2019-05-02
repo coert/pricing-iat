@@ -54,7 +54,7 @@
       for (j = 0; j < 2; ++j) {
         k = Math.floor(Math.random() * corres.length);
         trial = {stimulus: "img/" + colors[i], data: { test_part: 'test', correct_response: corres[k] } }
-        test_stimuli += trial;
+        test_stimuli.push(trial)
       }
     }
 
