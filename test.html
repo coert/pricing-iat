@@ -51,7 +51,9 @@
     var corres = ['f','j'];
     var i = 0;
     var j = 0;
-    for (i = 0; i < 2; ++i) {
+    // for every color
+    for (i = 0; i < colors.length; ++i) {
+      // create 2 trials with random correct response
       for (j = 0; j < 2; ++j) {
         var k = Math.floor(Math.random() * corres.length);
         trial = {stimulus: "img/" + colors[i], data: { test_part: 'test', correct_response: corres[k] } }
@@ -83,7 +85,7 @@
       timeline: [fixation, test],
       timeline_variables: test_stimuli,
       repetitions: 5,
-      randomize_order: false
+      randomize_order: false // don't randomize the order for demo purposes
     }
     timeline.push(test_procedure);
 
