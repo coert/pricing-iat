@@ -47,24 +47,25 @@
 */
     var test_stimuli = [];
     var colors = ["blue.png", "orange.png"];
-    var corres = ['f','j'];
+    var corres = ['d','f','j','k'];
     var i = 0;
     var j = 0;
     
     // for every color
     for (i = 0; i < colors.length; ++i) {
       
-      corres_wor = jsPsych.randomization.sampleWithoutReplacement(corres, corres.length);
-      
       // create 2 trials with a random correct response
-      for (j = 0; j < corres.length; ++j) {
-        // trial WITH correct response repetition (eg.: 2x 'j')
+      corres_wor = jsPsych.randomization.sampleWithoutReplacement(corres, 2);
+      
+      for (j = 0; j < corres_wor.length; ++j) {
+        // trial WITH correct response repetition (eg.: 'j','j')
 /*
         var k = Math.floor(Math.random() * corres.length);
         trial = {stimulus: "img/" + colors[i], data: { test_part: 'test', correct_response: corres[k] } }
 */
         
-        // trial WITHOUT possible correct response repetition, but with random order for each color (eg.: 'j','f' or 'f','j')
+        // trial WITHOUT possible correct response repetition, but with random order for each color 
+        // (eg.: 'j','f' or 'd','j' but not 'j','j')
         trial = {stimulus: "img/" + colors[i], data: { test_part: 'test', correct_response: corres_wor[j] } }
         
         // add it to test_stimuli
