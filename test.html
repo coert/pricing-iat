@@ -56,6 +56,7 @@
       
       // create 2 trials with a random correct response
       corres_wor = jsPsych.randomization.sampleWithoutReplacement(corres, 2);
+      console.log(corres_wor)
       
       for (j = 0; j < corres_wor.length; ++j) {
         // trial WITH correct response repetition (eg.: 'j','j')
