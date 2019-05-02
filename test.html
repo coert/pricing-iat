@@ -50,9 +50,10 @@
     var colors = ["blue.png", "orange.png"];
     var corres = ['f','j'];
     var i = 0;
+    var j = 0;
     for (i = 0; i < 2; ++i) {
       for (j = 0; j < 2; ++j) {
-        k = Math.floor(Math.random() * corres.length);
+        var k = Math.floor(Math.random() * corres.length);
         trial = {stimulus: "img/" + colors[i], data: { test_part: 'test', correct_response: corres[k] } }
         test_stimuli.push(trial)
       }
